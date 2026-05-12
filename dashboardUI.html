@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body{
+            background: #0f1115;
+            color: white;
+            font-family: arial;
+            display: flex;
+            margin: 0;
+        }
+        .sidebar{
+            width: 220px;
+            background: #1c1f26;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar h2{
+            color: #4da3ff;
+            margin-bottom: 30px;
+        }
+        .sidebar a{
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 15px 0;
+            padding: 8px;
+           border-radius: 6px;
+        }
+        .sidebar a:hover{
+            background: #4da3ff;
+        }
+        .main{
+            flex: 1;
+            padding: 30px;
+        }
+        .header{
+            margin-bottom: 20px;
+        }
+        .cards{
+            background: #1c1f26;
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .cards:hover{
+            transform: scale(1.05);
+            background: #2a2f3a;
+        }
+        .cards h3{
+            margin: 0;
+            color: #4da3ff;
+        }
+        .cards p{
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>My App</h2>
+        <a href="#">My Dashboard</a>
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+        <a href="test.html">Logout</a>
+    </div>
+    <div class="main">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <p>welcome Back</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <h3>Users</h3>
+                <p>120</p>
+            </div>
+            <div class="card">
+                <h3>Visits</h3>
+                <p>8900</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
