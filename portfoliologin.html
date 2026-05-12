@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+            font-family: arial;
+        }
+        .login-box{
+            background: #222;
+            padding: 30px;
+            width: 300px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        h2{
+            color: white;
+            margin-bottom: 20px;
+        }
+        input{
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        button{
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #4da3ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover{
+            transform: scale(1.05);
+            background:#3390ff;
+                }
+        .password-box{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .password-box input{
+            padding-right: 45px;
+        }
+        .eye{
+            position: absolute;
+            right: 12px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transform: none;
+        }
+        .eye img{
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .eye img:hover{
+            opacity: 1;
+        }
+        .options{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        .options label{
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .options input[type="checkbox"]{
+            margin: 0;
+            transform: translateY(0.25px);
+        }
+        .options a{
+            color: #4da3ff;
+            text-decoration: none;
+        }
+        .options a:hover{
+            text-decoration: underline;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+        <input type="email" id="email" placeholder="Enter your email">
+        <div class="password-box">
+        <input type="password" id="password" placeholder="Enter your password">
+                <span class="eye" onclick="showPassword()">
+        <img src="hide.png" alt="">
+        </span>
+        </div>
+            <div class="options">
+            <label>
+                <input type="checkbox">
+            REMEMBER ME
+            </label>
+            <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+    <script>
+    function showPassword(){
+        const pass =document.getElementById("password");
+        if(pass.type ==="password"){
+            pass.type = "text";
+        }
+        else{
+            pass.type = "password";
+        }
+    }
+    function login(event){
+        event.preventDefault();
+        const email =document.getElementById("email").value;
+        const password =document.getElementById("password").value;
+        if(email===""||password===""){
+            alert("fill all details");
+        }
+        else{
+            alert("login successful");
+            window.location.href ="dashboard.html";
+        }
+    }
+    </script>
+</body>
+</html>
