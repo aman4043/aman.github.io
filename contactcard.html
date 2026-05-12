@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #eee;
+            font-family: arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card{
+            background: rgb(65, 61, 61);
+            width: 400px;
+            padding: 75px;
+            /* margin: 100px auto; */
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            background: #222;
+        }
+        /* .card:hover{
+            background: #2a2c2d;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        } */
+        img{
+            width: 200px;
+            border-radius: 50%;
+        }
+        button{
+            background: white;
+            color: black;
+            padding: 10px;
+            /* border: none; */
+            margin-top:10px;
+            transition: 0.3s;
+        }
+        button:hover{
+            background: #491616;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+        }
+        p{
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+        }
+        h2{
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- <img src="image1.png" alt="finding image"> -->
+        <h2>Aman CP</h2>
+        <p>CONTACT CARD</p>
+    <button id="contactBtn">CONTACT</button>
+    </div>
+    <script>
+    const card = document.querySelector(".card");
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.background = `
+                radial-gradient(
+                    circle at ${x}px ${y}px,
+                    #494949,
+                    #222 200px
+                )
+            `;
+        });
+            card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.background = "#222";
+        });
+        const btn=document.getElementById("contactBtn");
+    let isOpen = false;
+const text = document.querySelector("p");
+    btn.addEventListener("click", () => {
+
+        if (!isOpen) {
+            text.innerText = "Email: acpaman4043@gmail.com";
+            btn.innerText = "Done";
+            isOpen = true;
+        } else {
+            text.innerText = "IT support";
+            btn.innerText = "CONTACT";
+            isOpen = false;
+        }
+
+    });
+</script>
+</body>
+</html>
